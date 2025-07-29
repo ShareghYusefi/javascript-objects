@@ -44,3 +44,39 @@ var person2 = {
 };
 
 console.log(person2.canTalk());
+
+// We can create objects via a class rule
+// A class is a bluprint for creating objects
+
+// We can create a class using the 'class' keyword.
+class Person {
+  // properties: do NOT require declaration or initialization
+  username;
+  age;
+  isMarried;
+
+  // constructor is a function that will run when we create an object from our class blueprint
+  constructor(usernameArg, ageArg, isMarriedArg) {
+    console.log("Person class constructor function called");
+
+    this.username = usernameArg;
+    this.age = ageArg;
+    this.isMarried = isMarriedArg;
+  }
+
+  // methods: do NOT require the function keyword
+  canTalk() {
+    console.log("Hello! My name is " + this.username);
+  }
+}
+
+// create an object from the class blueprint using the 'new' keyword.
+// the new keyword calls the constructor function of the referenced class
+var person3 = new Person("Jack", 35, true);
+
+console.log(person3);
+console.log(person3.canTalk());
+
+var person4 = new Person("Jill", 40, true);
+console.log(person4);
+console.log(person4.canTalk());
